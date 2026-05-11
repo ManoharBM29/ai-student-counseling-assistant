@@ -1,5 +1,5 @@
 # 🤖 AI Student Counseling Assistant
-### Module Contribution — EduPath University Management Platform
+### Module Contribution — EdTech University Management Platform
 
 > A full-stack GenAI + Agentic AI module built as an internship contribution.
 > Powered by **Groq LLaMA 3.3 70B** · **FastAPI** · **React** · **PostgreSQL**
