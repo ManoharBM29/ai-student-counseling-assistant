@@ -110,8 +110,8 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allow_headers=["*"],
-    expose_headers=["*"],
+    allow_headers=["https://ai-student-counseling-assistant.vercel.app/"],
+    expose_headers=["https://ai-student-counseling-assistant.vercel.app/"],
 )
 
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
