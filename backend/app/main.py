@@ -103,15 +103,14 @@ from app.api import auth, counseling
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="AI Student Counseling Assistant", version="1.0.0")
+app = FastAPI(title="AI Student Counseling Assistant")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allow_headers=["https://ai-student-counseling-assistant.vercel.app/"],
-    expose_headers=["https://ai-student-counseling-assistant.vercel.app/"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
@@ -122,6 +121,8 @@ def root():
     return {
         "module": "AI Student Counseling Assistant",
         "platform": "EduPath University Management Platform",
-        "agents": ["OrchestratorAgent","ProfilerAgent","SkillGapAgent","UniversityAgent","SOPWriterAgent","SOPReviewerAgent","InterviewCoachAgent","TrackerAgent"],
+        "agents": ["OrchestratorAgent","ProfilerAgent","SkillGapAgent",
+                   "UniversityAgent","SOPWriterAgent","SOPReviewerAgent",
+                   "InterviewCoachAgent","TrackerAgent"],
         "status": "running"
     }
